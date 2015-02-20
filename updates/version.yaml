@@ -1,1 +1,10 @@
 1.0.1: First version of NewsLetter
+    - Initialize plugin.
+    - create_subscribers_table.php
+    - Fixed data-request
+    - Added the status and code column to the subscribers table.
+    - create_newsletters_code.php
+    - create_newsletters_status.php
+    - Adding a unsubscribe form.
+    - fixed code update
+    - update_code_column_subscriber.php

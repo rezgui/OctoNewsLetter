@@ -1,0 +1,17 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    email:
+        label: Email
+        disabled: true
+    sdate:
+        label: Date Subscribe
+        disabled: true		
+    latitude:
+        label: Latitude
+        disabled: true
+    longitude:
+        label: Longitude
+        disabled: true

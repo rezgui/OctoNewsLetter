@@ -17,10 +17,55 @@ class Plugin extends PluginBase
     {
         return [
             'name'        => 'NewsLetter',
-            'description' => 'A simple newsletter for October CMS (fork from A simple Subscribe : andradedev/simple-subscribe)',
+            'description' => 'A simple NewsLetter Plugin for October CMS (fork from andradedev/simple-subscribe)',
             'author'      => 'Yacine REZGUI',
             'icon'        => 'icon-leaf'
         ];
     }
 
+    public function registerComponents()
+    {
+        return [
+            'Rezgui\NewsLetter\Components\Subscriber'       => 'formSubscribe',
+            'Rezgui\NewsLetter\Components\Unsubscribe'       => 'formUnsubscribe',
+        ];
+    }
+
+    public function registerPermissions()
+    {
+        return [
+            'rezgui.newsLetter.newsLetters'       => ['tab' => 'NewsLetter', 'label' => 'Access NewsLetters'],
+        ];
+    }
+
+    public function registerNavigation()
+    {
+        return [
+            'newsLetter' => [
+                'label'       => 'NewsLetters',
+                'url'         => \Backend::url('rezgui/newsLetter/newsLetters'),
+                'icon'        => 'icon-rss',
+                'permissions' => ['rezgui.newsLetter.*'],
+                'order'       => 500,
+
+                'sideMenu' => [
+                    'subscribers' => [
+                        'label'       => 'NewsLetters',
+                        'icon'        => 'icon-rss',
+                        'url'         => \Backend::url('rezgui/newsLetter/newsLetters'),
+                        'permissions' => ['rezgui.newsLetter.access_newsLetters'],
+                    ]
+                ]
+
+            ]
+        ];
+    }
+
+    public function registerMailTemplates()
+    {
+        return [
+            'rezgui.newsLetter::mail.subscribe' => 'Welcome message for subscriber',
+            'rezgui.newsLetter::mail.unsubscribe' => 'Good bye message for subscriber'
+        ];
+    }
 }

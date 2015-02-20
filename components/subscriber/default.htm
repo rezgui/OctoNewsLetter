@@ -1,3 +1,19 @@
-<p>This is the default markup for component Subscriber</p>
+<div class="card">
+    <div class="card-titlet">
+        <h2>SUSCRIBETE</h2>
+    </div>
 
-<small>You can delete this file if you want</small>
+    <div class="card-content author">
+        <form name="form-subscribe-newsletter" id="form-subscribe-newsletter" data-request="{{ __SELF__ }}::onAddSubscriber" data-request-update="'{{__SELF__}}::alert': '#result'">
+            <input type="email" class="form-control" name="email" placeholder="* Email" required>
+            <input type="hidden" name="latitude" id="latitude">
+            <input type="hidden" name="longitude" id="longitude">
+        </form>
+    </div>
+
+    <div class="card-action">
+        <button class="btn btn-primary btn-block" form="form-subscribe-newsletter">Subscribirse</button>
+    </div>
+    
+    <div id="result"></div>
+</div>

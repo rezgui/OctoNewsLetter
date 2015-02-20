@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: NewsLetter
+
+# Model Form Field configuration
+form: $/rezgui/newsletter/models/newsletter/fields.yaml
+
+# Model Class name
+modelClass: Rezgui\NewsLetter\Models\NewsLetter
+
+# Default redirect location
+defaultRedirect: rezgui/newsletter/newsletters
+
+# Create page
+create:
+    title: Create NewsLetter
+    redirect: rezgui/newsletter/newsletters/update/:id
+    redirectClose: rezgui/newsletter/newsletters
+
+# Update page
+update:
+    title: Edit NewsLetter
+    redirect: rezgui/newsletter/newsletters
+    redirectClose: rezgui/newsletter/newsletters
+
+# Preview page
+preview:
+    title: Preview NewsLetter
